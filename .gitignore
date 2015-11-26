@@ -1,0 +1,26 @@
+using System;
+
+
+    class FourFactors
+    {
+        static void Main()
+        {
+        double FG = double.Parse(Console.ReadLine());                       //Field Goals
+        double FGA = double.Parse(Console.ReadLine());                      //Field Goal Attempts
+        double G3P = double.Parse(Console.ReadLine());                      //3-Point Field Goals
+        double TOV = double.Parse(Console.ReadLine());                      //Turnovers
+        double ORB = double.Parse(Console.ReadLine());                      //Offensive Rebounds
+        double oppDRB = double.Parse(Console.ReadLine());                   //Offensive Rebounds
+        double FT = double.Parse(Console.ReadLine());                       //Free Throws
+        double FTA = double.Parse(Console.ReadLine());                      //Free Throw Attempts
+
+        double efg = (FG + 0.5 * G3P) / FGA;
+        double tov = (TOV / (FGA + 0.44 * FTA + TOV));
+        double orb = ORB / (ORB + oppDRB);
+        double ft = FT / FGA;
+        Console.WriteLine("eFG% {0:f3}", efg);
+        Console.WriteLine("TOV% {0:f3}", tov);
+        Console.WriteLine("ORB% {0:f3}", orb);
+        Console.WriteLine("FT% {0:f3}", ft);
+        }
+    }
